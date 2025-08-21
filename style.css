@@ -158,16 +158,7 @@
             
         }
         
-        /* .stat-icon-wrapper {
-            margin-right: 15px;
-            background: var(--primary);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        } */
+        
 
         .stat-icon-wrapper {
       
@@ -1161,3 +1152,83 @@
         .compact-primary-btn:active {
             transform: translateY(1px);
         }
+
+ .benefit-box {
+            background: rgba(30, 30, 40, 0.6);
+            border-radius: 10px;
+            padding: 1.5rem;
+            /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            
+        }
+        
+        .benefit-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        
+        
+        .benefit-title {
+            color: #f0ecb3;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: left;
+            font-size: 1.4rem;
+        }
+        
+        .benefit-description {
+            color: #ffc747;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            text-align: left;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .feature-list li {
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-icon {
+            color: var(--primary-dark);
+            margin-right: 0.7rem;
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+        
+        .feature-text {
+            color: #ffc747;
+            line-height: 1.4;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 992px) {
+            .benefit-box {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .benefit-box {
+                padding: 1.2rem;
+            }
+            
+            .benefit-title {
+                font-size: 1.3rem;
+            }
+        
+        }
+
+        
+        
+        
