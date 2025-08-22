@@ -114,7 +114,7 @@
         /* Hero Section */
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1639987759021-bc55a0c96ce1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fGNyeXB0b3xlbnwwfHwwfHx8MA%3D%3D');
+                        url('img/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
