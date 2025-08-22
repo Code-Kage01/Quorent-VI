@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quorent VII - AI-Powered Crypto Trading Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<style>
+    .side-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 213, 112, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+            height: auto;
+        }
+        
+        .side-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .card-description {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 15px 0;
+            width: 40px;
+        }
+        
+        .contact-highlight {
+            color: var(--primary) !important;
+            font-weight: 600;
+        }
+        
+        .business-hours {
+            text-align: left;
+        }
+        
+        .business-hours .day {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        .business-hours .day:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .chat-btn {
+            background-color: #ffd374;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+        
+        .chat-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 213, 112, 0.3);
+        }
+        
+        .support-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        
+        
+        @media (max-width: 992px) {
+            .side-cards {
+                margin-top: 30px;
+            }
+        }
+   .container {
+            max-width: 1000px;
+        }
+        
+        .header-title {
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 213, 112, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .card-description {
+            color: var(--primary-light);
+            font-size: 1rem;
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 20px 0;
+            width: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-highlight {
+            color: var(--primary) !important;
+            font-weight: 600;
+        }
+        
+        /* Form Styling */
+        .form-container {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 213, 112, 0.15);
+        }
+        
+        .form-title {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .form-label {
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-control {
+            background-color: var(--input-bg);
+            border: 1px solid rgba(255, 213, 112, 0.1);
+            color: white;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            background-color: rgba(50, 50, 60, 0.8);
+            border-color: var(--primary);
+            color: white;
+            box-shadow: 0 0 0 0.25rem rgba(255, 213, 112, 0.25);
+        }
+        
+        .form-control::placeholder {
+            color: #888;
+        }
+        
+        .btn-primary {
+            background-color: #ffd570;
+            border-color: var(--primary);
+            color: black;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ffd374;
+            border-color: #ffd374;
+            color: black;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-icon {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+</style>
+<body>
+    <!-- Header -->
+ <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container-fluid navbar-container">
+        <a class="navbar-brand" href="index.html" style="margin-left: 5px;">
+            <div class="logo-box">Q</div>
+            <span class="brand-text">Quorent VII</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Centered navigation links -->
+            <ul class="navbar-nav nav-center mx-auto">
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-custom" href="index.html">Home</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-custom" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-custom" href="approach.html">Our Approach</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-custom" href="plans.html">Plans</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-custom" href="compliance.html">Compliance</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link nav-link-custom" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+            
+            <div class="d-flex nav-buttons ms-auto" style="margin-right: 5px;">
+                <a href="login.html" class="btn btn-login me-2">Login</a>
+                <a href="register.html" class="btn btn-signup">Create Account</a>
+            </div>
+        </div>
+    </div>
+</nav>
+    <!-- Hero Section -->
+    <section style="background-color: black;" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="mt-5 col-12 col-lg-10 text-center">
+                    <h2 class="wealth-heading">
+                        <span style="color: #f0ecb3;">Get in    </span>
+                        <span style="color: #ffd570;">Touch  </span>
+                    </h2>
+                    <p class="wealth-text">
+                        Ready to start your investment journey? Our expert team is here to guide you every step of the way. Contact us for personalized investment strategies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+         <div class="container mt-5">
+        <h2 class="header-title">Get In Touch With Us</h2>
+        
+        <div class="row justify-content-center">
+            <!-- Email Card -->
+            <div class="col-12 col-md-5 mb-4">
+                <div class="feature-card h-100">
+                    <div class="card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="card-title">Email Us</h3>
+                    <p class="card-description">Send us a message anytime</p>
+                    <div class="divider"></div>
+                    <p class="card-description contact-highlight">contact@quorentvii.com</p>
+                </div>
+            </div>
+            
+            <!-- Location Card -->
+            <div class="col-12 col-md-5 mb-4">
+                <div class="feature-card h-100">
+                    <div class="card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="card-title">Visit Us</h3>
+                    <p class="card-description">Come by our office</p>
+                    <div class="divider"></div>
+                    <p class="card-description">300 DELAWARE AVE STE 210-A<br>WILMINGTON, New Castle, DE, 19801</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Form -->
+            <div class="container mt-5">
+        <h2 class="header-title">Contact Us</h2>
+        
+        <div class="row">
+            <!-- Left Column - Contact Form -->
+            <div class="col-12 col-lg-8">
+                <div class="form-container">
+                    <h3 class="form-title"><i class="fas fa-paper-plane form-icon"></i>Send Us a Message</h3>
+                    
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Your first name">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Your last name">
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your email address">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number (Optional)</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Your phone number">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" placeholder="What is this regarding?">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Type your message here..."></textarea>
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Right Column - Stacked Cards -->
+            <div class="col-12 col-lg-4 side-cards">
+                <!-- Business Hours Card -->
+                <div class="side-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="card-title">Business Hours</h3>
+                    <div class="divider"></div>
+                    
+                    <div class="business-hours">
+                        <div class="day">
+                            <span>Monday - Friday</span>
+                            <span class="contact-highlight">9 AM - 6 PM</span>
+                        </div>
+                        <div class="day">
+                            <span>Saturday</span>
+                            <span class="contact-highlight">10 AM - 4 PM</span>
+                        </div>
+                        <div class="day">
+                            <span>Sunday</span>
+                            <span class="contact-highlight">Closed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Live Chat Support Card -->
+                <div class="side-card">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="card-title">Live Chat Support</h3>
+                    <div class="divider"></div>
+                    
+                    <p class="card-description">Get instant answers to your questions through our live chat support.</p>
+                    
+                    <span class="support-status online">
+                        <i class="fas fa-circle me-1"></i> Online Now
+                    </span>
+                    
+                    <div class="text-center mt-3">
+                        <button class="chat-btn">
+                            <i class="fas fa-comment-dots me-2"></i> Start Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>     
+    
+    
+
+    
+    <!-- Footer -->
+       <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 footer-about">
+                     <a href="#" class="footer-logo">
+            <div class="logo-box">Q</div>
+            <span style="color: #ffd374;">Quorent VII</span>
+        </a>
+                    <p class="mb-4">Crafted for Visionaries, Built for Results. Where AI precision meets proven expertise to deliver exceptional investment returns.</p>
+                    <ul class="contact-info">
+                        <li class="mb-2"><i class="fas fa-envelope"></i> info@quorentseven.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 300 DELAWARE AVE STE 210-A, WILMINGTON, New Castle, DE, 19801</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h3 class="mb-3">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="approach.html">Our Approach</a></li>
+                        <li class="mb-2"><a href="plans.html">Investment Plans</a></li>
+                        <li><a href="compliance.html">Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h3 class="mb-3">Legal</h3>
+                    <ul>
+                        <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="service.html">Terms Of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+      <div class="row footer-bottom justify-content-between">
+    <div class="col-auto">
+        <p class="mb-0">© 2024 Quorent VII. All rights reserved</p>
+    </div>
+    <div class="col-auto">
+        <p class="mb-0">Quorent VII - Crafted for Visionaries, Built for Results.</p>
+    </div>
+</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle active class on answer
+                answer.classList.toggle('active');
+                
+                // Rotate icon
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
