@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quorent VII - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: black;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        /* Logo container above the form */
+        .logo-container {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .navbar-brand {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            margin-bottom: 15px;
+        }
+        
+        .logo-box {
+            width: 50px;
+            height: 50px;
+            background-color: #ffd374;
+            color: black;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        
+        .brand-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffd76a;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            color: black;
+            text-align: left;
+            padding: 25px 30px 15px;
+        }
+        
+        .header h2 {
+            font-weight: 600;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        
+        .header p {
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .form-container {
+            padding: 0 30px 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px 45px 14px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: #ffd76a;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(74, 111, 199, 0.2);
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #777;
+            z-index: 2;
+            background: transparent;
+            border: none;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn {
+            background-color: #ffd374;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        
+        .btn:hover {
+            background: #ffd76a;
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #555;
+        }
+        
+        .form-footer a {
+            color: #ffd374;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .divider span {
+            padding: 0 10px;
+            color: #777;
+            font-size: 14px;
+        }
+        
+        
+        
+        
+        @media (max-width: 600px) {
+            .container {
+                border-radius: 10px;
+            }
+            
+            .form-container {
+                padding: 0 20px 20px;
+            }
+            
+            .logo-box {
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+            }
+            
+            .brand-text {
+                font-size: 24px;
+            }
+            
+            .social-login {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo placed above the form container -->
+    <div class="logo-container">
+        <a class="navbar-brand" href="index.html">
+            <div class="logo-box">Q</div>
+            <span class="brand-text">Quorent VII</span>
+        </a>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h2>Welcome Back</h2>
+            <p>You can sign in to your account using email or username</p>
+        </div>
+        
+        <div class="form-container">
+            <form id="loginAccountForm">
+                <div class="form-group">
+                    <label for="loginEmail">Username or Email</label>
+                    <input type="email" id="loginEmail" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="loginPassword" name="password" required placeholder="Enter your password">
+                        <button type="button" class="toggle-password" id="toggleLoginPassword">
+                            <i class="far fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                    <label style="display: inline-flex; align-items: center; margin-bottom: 0;">
+                        <input type="checkbox" id="rememberMe" name="rememberMe" style="width: auto; margin-right: 8px;">
+                        Keep me Logged In
+                    </label>
+                    <a href="#" style="font-size: 14px; text-decoration: none; color: #ffd76a;">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn">Login</button>
+                
+                <div class="form-footer">
+                    Don't have an account? <a href="register.html">Register here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+<script type="text/javascript">
+var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"siqdbee1c3c4b74182ae71d3c5fbe2ddf01647a8e0adaa444de1efcefa41077dda5", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Password visibility toggle functionality
+            const toggleLoginPassword = document.getElementById('toggleLoginPassword');
+            const loginPasswordInput = document.getElementById('loginPassword');
+            
+            toggleLoginPassword.addEventListener('click', function() {
+                const type = loginPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                loginPasswordInput.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+            
+            // Login form submission
+            document.getElementById('loginAccountForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Basic validation
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                
+                if (!email || !password) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+                
+                // If validation passes, you would typically submit the form to a server
+                alert('Login successful! (This is just a demo)');
+                
+                // In a real application, you would redirect to dashboard here
+                // window.location.href = 'dashboard.html';
+            });
+        });
+    </script>
+</body>
+</html>
