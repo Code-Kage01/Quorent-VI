@@ -13,8 +13,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: "Sora", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
         }
+
+
         
         body {
             background-color: #0a0a0a;
